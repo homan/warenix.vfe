@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Vignette Filters Exchange</string>
+    <string name="message_input_keyword">Search by keywords, separated by comma. e.g. vignette,cool</string>
+    <string name="list_loading">Loading...</string>
+    <string name="list_button_more">More</string>
+    <string name="list_empty">No effect filter is found.</string>
+    <string name="toast_reached_the_end">You\'ve reached the end of list</string>
+    <string name="status_upload_photo">1. Uploading preview image</string>
+    <string name="status_upload_cloud">2. Saving to the cloud</string>
+    <string name="status_upload_done">3. Done</string>
+    <string name="message_invalid_form">Please fill in all fields</string>
+
+</resources>
