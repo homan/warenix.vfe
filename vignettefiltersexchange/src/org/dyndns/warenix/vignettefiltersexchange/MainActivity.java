@@ -22,7 +22,7 @@ public class MainActivity extends FragmentActivity implements
 
 	private static final String TAG = "MainActivity";
 
-	private String mKeyword = "vignette";
+	private String mKeyword = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

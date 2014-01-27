@@ -7,6 +7,8 @@
         android:id="@+id/more"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="more" />
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/button_more" />
 
 </RelativeLayout>

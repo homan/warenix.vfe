@@ -11,5 +11,14 @@
     <string name="status_upload_cloud">2. Saving to the cloud</string>
     <string name="status_upload_done">3. Done</string>
     <string name="message_invalid_form">Please fill in all fields</string>
+    <string name="message_input_tags">Give some tags for searching purpose, separated by a comma</string>
+    <string name="message_imported_effect_filter">Imported a cool effect filter.</string>
+    <string name="section_preview_image">Preview Image</string>
+    <string name="message_pick_a_preview_image">Pick an image to showcase your cool filter.</string>
+    <string name="section_filter">Filter</string>
+    <string name="section_tags">Tags</string>
+    <string name="hints_input_tags">Tags</string>
+    <string name="preview_image_content_description">Preview image of the filter.</string>
+    <string name="button_more">More</string>
 
 </resources>

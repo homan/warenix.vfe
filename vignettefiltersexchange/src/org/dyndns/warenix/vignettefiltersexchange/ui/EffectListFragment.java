@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -37,6 +38,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonSyntaxException;
 import com.squareup.picasso.Picasso;
 
 public class EffectListFragment extends Fragment implements OnClickListener,
@@ -287,23 +289,32 @@ public class EffectListFragment extends Fragment implements OnClickListener,
 		String json = GSON.toJson(request);
 		// Log.d(TAG, "send:" + json);
 		String response = NetworkUtil.call(ExpAPI.URL_GET, json);
-		// Log.d(TAG, "response:" + response);
-		EffectResponse result = GSON.fromJson(response, EffectResponse.class);
-		if (result == null) {
+		Log.d(TAG, "response:" + response);
+		try {
+			EffectResponse result = GSON.fromJson(response,
+					EffectResponse.class);
+			if (result == null) {
 
-		} else {
+			} else {
 
-			mDataList.addAll(Arrays.asList(result));
-			// update sinceID
-			mMaxID = result._id.$oid;
+				mDataList.addAll(Arrays.asList(result));
+				// update sinceID
+				mMaxID = result._id.$oid;
+			}
+			return new EffectResponse[] { result };
+		} catch (JsonSyntaxException e) {
+			// probably effectID is invalid
+			return null;
 		}
-		return new EffectResponse[] { result };
 	}
 
 	private EffectResponse[] doKeywordSearch() {
 		ListRequest request = new ListRequest();
 		// request.tags = new String[] { mKeyword };
-		request.tags = UploadFragment.extractTags(mKeyword);
+		String[] tags = UploadFragment.extractTags(mKeyword);
+		if (tags != null && tags.length > 0) {
+			request.tags = tags;
+		}
 		request.max_id = mMaxID;
 
 		String json = GSON.toJson(request);

@@ -12,13 +12,13 @@
             style="?android:listSeparatorTextViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Filter" />
+            android:text="@string/section_filter" />
 
         <TextView
             style="@android:style/TextAppearance.Holo.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Imported a cool filter" />
+            android:text="@string/message_imported_effect_filter" />
 
         <TextView
             android:id="@+id/effect"
@@ -30,39 +30,40 @@
             style="?android:listSeparatorTextViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tags" />
+            android:text="@string/section_tags" />
 
         <TextView
             style="@android:style/TextAppearance.Holo.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Give some tags for searching purpose, seprated by a comma" />
+            android:text="@string/message_input_tags" />
 
         <EditText
             android:id="@+id/tags"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tags"
+            android:hint="@string/hints_input_tags"
             android:singleLine="true" />
 
         <TextView
             style="?android:listSeparatorTextViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Preview Image" />
+            android:text="@string/section_preview_image" />
 
         <TextView
             style="@android:style/TextAppearance.Holo.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Pick an image to showcase your cool filter." />
+            android:text="@string/message_pick_a_preview_image" />
 
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:contentDescription="@string/preview_image_content_description"
             android:src="@drawable/ic_launcher" />
     </LinearLayout>
 

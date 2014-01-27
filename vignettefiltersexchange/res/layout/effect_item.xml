@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="320dp"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/preview_image_content_description"
         android:src="@drawable/ic_launcher" />
 
     <TextView
@@ -16,9 +17,8 @@
         android:background="#ee222222"
         android:ems="10"
         android:padding="24dp"
-        android:text="des"
         android:textColor="#efefef"
-        android:textSize="14dp"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
 </RelativeLayout>
