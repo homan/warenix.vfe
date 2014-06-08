@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
+import android.widget.Toast;
 
 public class VignetteEffectExporter {
 
@@ -49,6 +50,13 @@ public class VignetteEffectExporter {
 		File file = getLocalTempEffectFile(context, vignetteEffect);
 		intent.setDataAndType(Uri.fromFile(file),
 				"application/vnd.vignette-effects");
-		context.startActivity(intent);
+
+		if (intent.resolveActivity(context.getPackageManager()) != null)
+			context.startActivity(intent);
+		else {
+			Toast.makeText(context, "No vignette is installed",
+					Toast.LENGTH_SHORT).show();
+		}
+
 	}
 }
